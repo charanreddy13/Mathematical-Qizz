@@ -9,10 +9,10 @@ namespace Mathematical_Qizz.services
 {
     public interface Iloginrepository
     {
-        Task<List<login>> LoginAsync();
+        Task<List<Login>> LoginAsync();
 
-        Task<int> AdduserAsync(login lg);
+        Task<int> AdduserAsync(Login lg);
 
-        Task<int> UpdateUserAsync(login lg);
+        Task<int> UpdateUserAsync(Login lg);
     }
 }

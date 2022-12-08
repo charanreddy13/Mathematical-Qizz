@@ -24,20 +24,20 @@ namespace Mathematical_Qizz.services
         {
             string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "login.db3");
             _dbConnection = new SQLiteAsyncConnection(dbPath);
-            await _dbConnection.CreateTableAsync<login>();
+            await _dbConnection.CreateTableAsync<Login>();
         }
-        public Task<int> AdduserAsync(login lg)
+        public Task<int> AdduserAsync(Login lg)
         {
             return _dbConnection.InsertAsync(lg);
         }
 
-        public async Task<List<login>> LoginAsync()
+        public async Task<List<Login>> LoginAsync()
         {
-            var userinfolist = await _dbConnection.Table<login>().ToListAsync();
+            var userinfolist = await _dbConnection.Table<Login>().ToListAsync();
             return userinfolist;
         }
 
-        public Task<int> UpdateUserAsync(login lg)
+        public Task<int> UpdateUserAsync(Login lg)
         {
                 return _dbConnection.UpdateAsync(lg);
             }

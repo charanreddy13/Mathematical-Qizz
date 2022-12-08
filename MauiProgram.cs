@@ -1,4 +1,8 @@
-﻿namespace Mathematical_Qizz;
+﻿using Mathematical_Qizz.services;
+using Mathematical_Qizz.pages;
+using Mathematical_Qizz.viewmodel;
+
+namespace Mathematical_Qizz;
 
 public static class MauiProgram
 {
@@ -12,7 +16,12 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
-
-		return builder.Build();
+        builder.Services.AddSingleton<Loginpage>();
+        builder.Services.AddSingleton<Iloginrepository, loginservice>();
+        builder.Services.AddSingleton<loginpageviewmodel>();
+        builder.Services.AddSingleton<register>();
+        builder.Services.AddSingleton<scoreboard>();
+        builder.Services.AddSingleton<Exercise>();
+        return builder.Build();
 	}
 }

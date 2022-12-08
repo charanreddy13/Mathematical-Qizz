@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Mathematical_Qizz.model
 {
-    public class login
+    public class Login
     {
-        [AutoIncrement]
+        
         public int Id { get; set; }
 
         [PrimaryKey]
