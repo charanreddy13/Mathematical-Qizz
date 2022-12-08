@@ -1,8 +1,8 @@
 namespace Mathematical_Qizz.pages;
 
-public partial class login : ContentPage
+public partial class Loginpage : ContentPage
 {
-	public login()
+	public Loginpage()
 	{
 		InitializeComponent();
 	}
