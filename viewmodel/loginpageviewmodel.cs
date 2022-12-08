@@ -16,9 +16,9 @@ namespace Mathematical_Qizz.viewmodel
         {
             _loginrepository = login;
         }
-        public ObservableCollection<login> userinfolist { get; set; } = new ObservableCollection<login>();
-        public ObservableCollection<login> userinfolistt { get; set; } = new ObservableCollection<login>();
-        public ObservableCollection<login> userinfolisttt { get; set; } = new ObservableCollection<login>();
+        public ObservableCollection<Login> userinfolist { get; set; } = new ObservableCollection<Login>();
+        public ObservableCollection<Login> userinfolistt { get; set; } = new ObservableCollection<Login>();
+        public ObservableCollection<Login> userinfolisttt { get; set; } = new ObservableCollection<Login>();
         [ObservableProperty]
         private string username;
 
@@ -35,7 +35,7 @@ namespace Mathematical_Qizz.viewmodel
         {
 
             var loginlist = await _loginrepository.LoginAsync();
-            var result = new login();
+            var result = new Login();
             Boolean hasvalue = false;
             foreach (var login in loginlist)
             {
@@ -65,7 +65,7 @@ namespace Mathematical_Qizz.viewmodel
         [RelayCommand]
         public async void Register()
         {
-            var lg = new login();
+            var lg = new Login();
             bool ischeck = false;
             if (username != null && password != null)
             {
@@ -88,7 +88,7 @@ namespace Mathematical_Qizz.viewmodel
                 else
                 {
 
-                    await _loginrepository.AdduserAsync(new login
+                    await _loginrepository.AdduserAsync(new Login
                     {
                         username = username,
                         password = password,
@@ -119,7 +119,7 @@ namespace Mathematical_Qizz.viewmodel
             }
         }
 
-        public bool checkforuserifo(login lg)
+        public bool checkforuserifo(Login lg)
         {
             if (lg.username == username && lg.password == password)
             {

@@ -4,11 +4,35 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Mathematical_Qizz"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:page="clr-namespace:Mathematical_Qizz.pages"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.TabBarIsVisible="False">
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate page:Loginpage}"
+        Shell.FlyoutBehavior="Disabled"
+        FlyoutItemIsVisible="False"
+        Route="Loginpage" />
+    <FlyoutItem Title="Quizz"
+                Icon="calculator.jpeg" >
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate page:Exercise}" />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="ScoreBoard"
+                Icon="calculator1.jpg">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate page:scoreboard}" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="About Team"
+                Icon="group.jpg">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate page:About }" />
+        </Tab>
+    </FlyoutItem>
+
 
 </Shell>
