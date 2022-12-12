@@ -10,22 +10,7 @@ namespace Mathematical_Qizz.services
 {
     internal class loginservice : Iloginrepository
     {
-        private SQLiteAsyncConnection _dbConnection;
 
-        public loginservice()
-        {
-            if (_dbConnection == null)
-            {
-                setupdb();
-            }
-
-        }
-        private async void setupdb()
-        {
-            string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "login.db3");
-            _dbConnection = new SQLiteAsyncConnection(dbPath);
-            await _dbConnection.CreateTableAsync<Login>();
-        }
         public Task<int> AdduserAsync(Login lg)
         {
             return _dbConnection.InsertAsync(lg);
