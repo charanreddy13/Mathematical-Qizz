@@ -7,5 +7,16 @@ using System.Threading.Tasks;
 
 namespace Mathematical_Qizz.model
 {
+        public class Login
+    {
+        
+        public int Id { get; set; }
 
+        [PrimaryKey]
+        public string username { get; set; }
+
+        public string password { get; set; }
+
+        public int score { get; set; }
+    }
 }
